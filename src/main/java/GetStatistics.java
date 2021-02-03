@@ -32,6 +32,12 @@ public class GetStatistics {
             logger.error(e.getMessage());
         }
     }
+
+    public void receiveStatistics(){    //для теста
+        receiveWords();
+        receiveWordAndCount();
+    }
+
     private void printWordAndCount(){
         for (String word : wordAndCount.keySet())
         {
@@ -39,7 +45,7 @@ public class GetStatistics {
         }
     }
 
-    private void receiveWords(){
+    public void receiveWords(){
         String text= document.body().text();
         StringBuilder builder = new StringBuilder(text); //чтобы при replace каждый раз не создавался новый объект строки
         List<Character> separators = Arrays.asList
